@@ -2,7 +2,7 @@
 系统性重学前端笔记，包含ECMAScript基础，前端工程化，热门框架，Node.js，泛客户端，数据结构与算法，设计模式等
 
 ## 进度
-* ECMAScript基础学习-学习中...
+* ECMAScript-2015基础学习-学习中...
 * 前端工程化
 * 热门框架学习-Vue-React
 * Node.js学习
