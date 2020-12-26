@@ -75,6 +75,8 @@ arrProxy[0] = 100;
 arrProxy.push(200); //数组长度增加了 触发'length'
 ```
 
-# Reflect 静态类
-Reflect有和和Proxy一样为了可以操作对象而提供的一个新API
-* 
+# Reflect 静态对象
+Reflect有和和Proxy一样为了可以操作对象而提供的一个新API，Reflect不是一个函数对象，因此它是不可构造的。
+* Reflect.apply 对一个对象进行函数调用
+* Reflect.get 获取对象某个属性值
+* Reflect.has 判断对象是否存在某个属性
