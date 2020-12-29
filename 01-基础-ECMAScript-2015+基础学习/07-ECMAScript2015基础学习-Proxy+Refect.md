@@ -80,3 +80,68 @@ Reflect有和和Proxy一样为了可以操作对象而提供的一个新API，Re
 * Reflect.apply 对一个对象进行函数调用
 * Reflect.get 获取对象某个属性值
 * Reflect.has 判断对象是否存在某个属性
+* Reflect.setPrototypeOf 设置目标对象的原型
+* Reflect.getPrototypeOf 获取目标对象的原型对象
+* Reflect.construct(target, args) 调用对象的构造函数 相当于 new Target(args)
+* Reflect.deleteProperty(target, name) 删除对象的属性 相当于 delete target[name]
+* Reflect.defineProperty(target, propKey, config)  定义对象属性 相当于Object.defineProperty()
+* Reflect.getOwnPropertyDescriptor(target, propKey) 获取对象的属性的描述对象 相当于Object.getOwnPropertyDescriptor()
+* Reflect.isExtensible(target) 检查对象是否可扩展 相当于Object.isExtensible
+* Reflect.preventExtensible(target) 将对象设置为不可以扩展 相当于Object.preventExtensible
+* Reflect.ownKeys(target) 返回对象的所有属性
+* ...
+
+## Reflect.apply(func, this, args)
+调用对象的 apply方法
+```javascript
+// 调用对象的 apply方法
+// old 
+console.log.apply(console, ['name']); //name
+// now
+let s = Reflect.apply(console.log, console, ['name']); //name
+```
+
+## Reflect.get(target, name, receiver)
+获取对象属性并返回对应的值，不存在则返回`undefined`
+```javascript
+// target 必须是对象 
+console.log(Reflect.get(console, 'log')); //ƒ log() { [native code] }
+```
+
+## Reflect.has(target, name)
+检查对象是否存在某个属性,存在返回`true`否则返回`false`
+```javascript
+console.log(Reflect.has(console, 'log')); //true
+console.log(Reflect.has(console, 'getName')); //false
+```
+
+## Reflect.setPrototypeOf(target, prototype)
+设置对象的原型对象,`target`必须是对象，如果设置失败会返回`false`
+```javascript
+// old
+let o = {};
+let o1 = {};
+o1.prototype = {
+  getName() {
+    console.log('name')
+  }
+}
+Object.setPrototypeOf(o, o1.prototype);
+o.getName(); // name
+
+
+// now
+let o = {};
+let o1 = {};
+o1.prototype = {
+  getName() {
+    console.log('name')
+  }
+}
+Reflect.setPrototypeOf(o, o1.prototype);
+o.getName(); // name
+
+Reflect.setPrototypeOf(null, {})// 报错
+
+Reflect.setPrototypeOf(Object.freeze({}), null); //冻结对象不能修改 返回 false
+```
