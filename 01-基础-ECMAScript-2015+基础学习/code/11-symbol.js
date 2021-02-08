@@ -4,6 +4,7 @@ let s1 = Symbol();
 console.log(s1);
 
 let s2 = Symbol('s2');
+112
 console.log(s2);
 
 let s3 = Symbol.for('s3');
