@@ -3,9 +3,9 @@
 
 ## 学习进度
 * 基础-ECMAScript-2015+基础学习-学习中...
-  * 01-ECMAScript基础学习-var-let-const
-  * 02-ECMAScript基础学习-数组和对象的解构
-  * 03-ECMAScript基础学习-字符串模板
+  * 01-ECMAScript2015基础学习-var-let-const
+  * 02-ECMAScript2015基础学习-数组和对象的解构
+  * 03-ECMAScript2015基础学习-字符串模板
   * 04-ECMAScript2015基础学习-字符串扩展的方法
   * 05-ECMAScript2015基础学习-函数
   * 06-ECMAScript2015基础学习-对象
