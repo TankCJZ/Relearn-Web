@@ -60,4 +60,4 @@ console.log(cid.next());
 生成器还有一个作用就是解决 `JavaScript` 回调嵌套的问题。
 
 ## 模块化
-模块化将以单个内容形式介绍，包含 `JavaScript` 模块化的发展史。
+模块化将以单个模块形式记录，包含 `JavaScript` 模块化的发展史。

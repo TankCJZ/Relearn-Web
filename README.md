@@ -2,7 +2,7 @@
 系统性重学前端笔记，包含ECMAScript 2015+基础，前端工程化，热门框架，Node.js，跨平台，数据结构与算法，设计模式等
 
 ## 学习进度
-* 基础-ECMAScript-2015+基础学习-学习中...
+  * 基础-ECMAScript-2015+基础学习-学习中...
   * 01-ECMAScript2015基础学习-var-let-const
   * 02-ECMAScript2015基础学习-数组和对象的解构
   * 03-ECMAScript2015基础学习-字符串模板
