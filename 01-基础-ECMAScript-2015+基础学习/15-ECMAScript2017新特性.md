@@ -1,5 +1,12 @@
 # ECMAScript 2017 新特性
 ES2017 是一个小版本的更新，只增加一些新的 `API`.
+* Object.values
+* Object.keys
+* Object.entries
+* Object.getOwnPropertyDescriptors
+* String.prototype.padStart
+* String.prototype.padEnd
+* await/async
 
 ## Object.values
 以数组的形式返回对象的 `value` 值
