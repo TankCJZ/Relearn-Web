@@ -2,7 +2,7 @@
 系统性重学前端笔记，包含ECMAScript 2015+基础，前端工程化，热门框架，Node.js，跨平台，数据结构与算法，设计模式等
 
 ## 学习进度
-### 基础篇-ECMAScript2015+ [学习中...]
+### 基础篇-ECMAScript2015+
   * 01-ECMAScript2015基础学习-var-let-const
   * 02-ECMAScript2015基础学习-数组和对象的解构
   * 03-ECMAScript2015基础学习-字符串模板
@@ -20,12 +20,11 @@
   * 15-ECMAScript2017新特性
   * 15-ECMAScript2018新特性
 ### JavaScript异步编程
-  * 01-同步编程模式
-  * 02-异步编程模式
-  * 03-回调函数
-  * 04-Promise 异步方案
-  * 05-Generator 异步方案
-  * 06-Async-Await 异步方案
+  * 01-同步模式与异步模式
+  * 02-事件循环(EventLoop)与消息队列
+  * 03-Promise 异步方案(宏任务/微任务)
+  * 04-Generator 异步方案
+  * 05-Async-Await 异步方案
 
   
 ## 提示
