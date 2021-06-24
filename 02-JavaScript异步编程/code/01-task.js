@@ -26,3 +26,13 @@ setTimeout(function timer2() {
     }, 1000)
 }, 1000);
 console.log('end');
+
+let p = new Promise((resolve, reject) => {
+    // resolve 将 Promise 的状态修改为 `Fulfilled` 成功
+    resolve('成功了');
+});
+p.then(res => {
+    console.log('成功了=>', res);
+}, err => {
+    console.log('拒绝原因=>', err);
+})
