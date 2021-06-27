@@ -1,7 +1,7 @@
 # 重学前端笔记
 系统性重学前端笔记，包含ECMAScript 2015+基础，前端工程化，热门框架，Node.js，跨平台，数据结构与算法，设计模式等
 
-## 学习进度
+## JavaScript核心基础
 ### 基础篇-ECMAScript2015+
   * [01-ECMAScript2015基础学习-var-let-const](https://github.com/TankCJZ/Relearn-Web/blob/main/01-%E5%9F%BA%E7%A1%80-ECMAScript-2015%2B%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/01-ECMAScript2015%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-var-let-const.md)
   * [02-ECMAScript2015基础学习-数组和对象的解构](https://github.com/TankCJZ/Relearn-Web/blob/main/01-%E5%9F%BA%E7%A1%80-ECMAScript-2015%2B%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/02-ECMAScript2015%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-%E6%95%B0%E7%BB%84%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%A7%A3%E6%9E%84.md)
@@ -38,6 +38,10 @@
 ### JavaScript函数式编程
 
 ### JavaScript性能优化
+
+## 前端工程化
+
+## `Vue.js`框架进阶与源码
 
 ## 勘误
 如果有疑问或者发现错误，欢迎进行提问或勘误。   
