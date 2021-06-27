@@ -304,3 +304,153 @@ let loading = true;
 ```
 
 ## 宏任务和微任务
+`Promise` 和  `setTimeout` 都属于异步任务，如果在细分的话，`Promise` 属于微任务， `setTimeout` 属于宏任务，宏任务和微任务都是属于异步任务，那么他们有什么区别呢？
+```javascript
+console.log('start');
+Promise.resolve()
+    .then(() => {
+        console.log('promise');
+    })
+console.log('end');
+```
+毫无疑问，上面例子执行顺序是 依次输出 `start end promise`，因为 `Promise` 是异步任务，会在主任务执行完成后执行。
+再看下面例子：
+```javascript
+console.log('start');
+setTimeout(() => {
+    console.log('time');
+}, 0)
+Promise.resolve()
+    .then(() => {
+        console.log('promise');
+    })
+    .then(() => {
+        console.log('promise1');
+    })
+console.log('end');
+// 一次输出
+// start
+// end 
+// promise
+// promise1
+// time
+```
+`Promise` 异步任务会在 `setTimeout` 之前执行，也就是算同样是异步任务，微任务会在宏任务之前执行。
+宏任务就是我们说的回调消息队列 `Queue`，而微任务则会在 本轮调用栈 `call stack` 执行完成后执行，当微任务执行完成后再执行 消息队列任务也就是宏任务。也有一种说法：微任务就是调用栈的附属任务，每次调用栈执行完成都会执行附属任务。
+
+## 微任务有哪些？
+`Promise`，`MutationObserver` `Nodejs`中的 `process.nextTick`
+
+## Generator
+`Generator` 是生成器函数，也是异步处理的一种方案，生成器函数在普通函数前 加 `*`:
+```javascript
+function * start() {
+    console.log('start');
+    yield 'foo';
+}
+const g = start();
+const result = g.next();
+console.log(result);// {value: 0, done: false}
+```
+使用 `next` 方法可以获取到对于生成器函数的 `yield` 结果，再次调用则会获取下一次 `yield` 结果，以此类推。
+```javascript
+// 无限生成器
+function * start() {
+    let index = 0;
+    while (true) {
+        yield index++;
+    }
+}
+const g = start();
+let result = g.next();
+console.log(result); //{value: 0, done: false}
+result = g.next();
+console.log(result); // {value: 1, done: false}
+```
+返回对象中两个属性 `value` 是对于的 `yield` 值，`done` 表示是否执行完成 `yield`.
+
+## 生成器捕获异常
+```javascript
+function * start() {
+    let index = 0;
+    try {
+        yield index++;
+    } catch (e) {
+        // err Error: 异常
+        // at <anonymous>:13:9
+        console.log('err:', e); // 此处可以捕获到 throw 抛出的异常
+    }
+}
+const g = start();
+const result = g.next();
+console.log(result);
+// 使用 throw 抛出异常
+g.throw(new Error('异常')); 
+```
+
+## co 异步方案
+借助生成器实现扁平化的处理异步，著名的 `co` 库就是使用该方式处理异步
+```javascript
+function * start() {
+    let index = 0;
+    try {
+        yield ajax(); //ajax 异步请求数据伪代码 返回 Promise
+        yield ajax(); //ajax 异步请求数据伪代码 返回 Promise
+    } catch (e) {
+        // err Error: 异常
+        // at <anonymous>:13:9
+        console.log('err:', e); // 此处可以捕获到 throw 抛出的异常
+    }
+}
+function co(generator) {
+    const g = generator();
+    function handle (result) {
+        if (result.done) return;
+        result.value.then(data => {
+            handle(g.next(data));
+        }, err => {
+            g.then(err);
+        })
+    }
+    handle(g.next());
+}
+co(start);
+```
+## `Async/Await` 语法糖
+`Async/Await` 语法糖的出现能更好的处理异步，很好的替代了 `Generator` 的方式来处理异步。
+```javascript
+async function main() {
+    return 111;
+}
+main().then(res => {
+    console.log(111); // 111
+})
+```
+> 在 `function` 之前加入 `async` 关键字则可将该函数定义为异步函数
+```javascript
+async function main() {
+    return 111;
+}
+
+async function start() {
+    const res = await main();
+    console.log(res);
+}
+start(); //111
+```
+> 使用 `await` 关键字可以接收 `Promise` 实例执行成功后的结果，注意 `await` 必须在 `async` 函数中使用
+```javascript
+function main() {
+    return Promise.reject(11);    
+}
+
+async function start() {
+    try {
+        const res = await main();
+    } catch (e) {
+        console.log(e); //11
+    }
+}
+start();
+```
+> `await` 是无法捕获到 `rejected` 回调,必须使用 `try catch` 才能捕获到
