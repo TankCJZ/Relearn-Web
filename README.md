@@ -3,7 +3,7 @@
 
 ## 学习进度
 ### 基础篇-ECMAScript2015+
-  * [01-ECMAScript2015基础学习-var-let-const]('https://github.com/TankCJZ/Relearn-Web/blob/main/01-%E5%9F%BA%E7%A1%80-ECMAScript-2015%2B%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/01-ECMAScript2015%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-var-let-const.md')
+  * [01-ECMAScript2015基础学习-var-let-const](https://github.com/TankCJZ/Relearn-Web/blob/main/01-%E5%9F%BA%E7%A1%80-ECMAScript-2015%2B%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/01-ECMAScript2015%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0-var-let-const.md)
   * 02-ECMAScript2015基础学习-数组和对象的解构
   * 03-ECMAScript2015基础学习-字符串模板
   * 04-ECMAScript2015基础学习-字符串扩展的方法
