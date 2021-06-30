@@ -27,13 +27,12 @@
   * [05-Async-Await 异步方案](https://github.com/TankCJZ/Relearn-Web/blob/main/02-JavaScript%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/05-Async-Await%20%E5%BC%82%E6%AD%A5%E6%96%B9%E6%A1%88.md)
 
 ### TypeScript语言
-  * 01-TypeScript和JavaScript区别
-  * 02-强类型与弱类型语言区别
-  * 03-TypeScript中的类型
-  * 04-TypeScript类与接口
-  * 05-TypeScript抽象类
-  * 06-TypeScript泛型
-  * 07-TypeScript类型声明
+  * 01-语言类型区别以及TypeScript和JavaScript
+  * 02-TypeScript中的类型
+  * 03-TypeScript类与接口
+  * 04-TypeScript抽象类
+  * 05-TypeScript泛型
+  * 06-TypeScript类型声明
 
 ### JavaScript函数式编程
 
