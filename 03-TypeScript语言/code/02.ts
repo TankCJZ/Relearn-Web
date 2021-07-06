@@ -32,4 +32,47 @@ const f2: { name: string } = { name: 'hello' }
 // 数组
 const arr1: Array<number> = [1,3,4]; //数字类型的数组
 const arr2: number[] = [1,2,4]
-const arr3: number[] = [1,2,4, '12']
+const arr3: number[] = [1,2,4, 12];
+
+// 元组
+const q: [number, string] = [123, 'hello'];
+
+// 枚举
+enum Color {
+    Red,
+    Green,
+}
+Color.Red
+Color[0];
+
+// 函数
+function foo (name: string, age?: number): string {
+    return `${name}-${age}`;
+}
+foo('张三', 25);
+foo('张三');
+
+// 默认参数
+function foo2 (name: string = 'zhangsan'): string {
+    return name;
+}
+foo2();
+const foo3 = function (name: string, age?: number): string {
+    return `${name}-${age}`;
+}
+const foo4 = (name: string, age?: number): string => {
+    return `${name}-${age}`;
+  }
+
+// 任意类型
+function stringify(data: any) {
+    return JSON.stringify(data);
+}
+
+// 类型推断
+let a = 123; // 此时会根据值 123 推断处 a 类型为 number
+a = '123'; 
+
+let b;
+b = 123; // 可以为number
+b = 'str'; //  也可以为 string

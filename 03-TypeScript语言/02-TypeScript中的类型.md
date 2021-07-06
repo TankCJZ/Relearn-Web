@@ -64,3 +64,100 @@ const arr3: number[] = [1,2,4, '12'];
 ```
 
 ## 元组类型
+元组类型 `Tuple`, 类似于数组，可以给每个数组值定义不同类型
+```typescript
+// 定义一个元组包含两个值，第一个为number类型，第二个为string类型
+const q: [number, string] = [123, 'hello'];
+```
+
+## 枚举类型
+使用 `enum` 来定义枚举，枚举中的值默认从 `0` 开始累加，也可以指定值。
+```typescript
+enum Color {
+    Red,
+    Green,
+}
+// 获取枚举值
+Color.Red
+Color[0]; // 等同于Color.Red
+Color[1]; // 等同于Color.Green
+
+// 指定值
+enum Color {
+    Red = 'Red',
+    Green = 'Green', // 值可以是字符串
+    Yellow = 1, // 值也可以是数字
+}
+Color.Red; //正确
+Color[0]; //报错
+```
+枚举编译结果最终还是以对象的形式定义,并且会常驻运行时中，建议使用常量方式定义枚举
+```javascript
+var Color;
+(function (Color) {
+    Color[Color["Red"] = 0] = "Red";
+    Color[Color["Green"] = 1] = "Green";
+})(Color || (Color = {}));
+Color.Red;
+Color[0];
+```
+
+## 函数类型
+在 `javascript` 中两种函数定义方式：函数申明和函数表达式。
+```typescript
+// 函数申明的方式使用 `:` 定义参数类型 `()`后定义函数返回值类型
+function foo (name: string, age?: number): string {
+    return `${name}-${age}`;
+}
+foo('张三', 25);
+foo('张三');
+
+// 函数表达式的方式
+const foo3 = function (name: string, age?: number): string {
+  return `${name}-${age}`;
+}
+// 或者是箭头函数
+const foo4 = (name: string, age?: number): string => {
+  return `${name}-${age}`;
+}
+
+// 编译结果
+var foo3 = function (name, age) {
+    return name + "-" + age;
+};
+var foo4 = function (name, age) {
+    return name + "-" + age;
+};
+```
+**可选参数**   
+在参数后面加 `?` 定义可选参数 `?age`,注意可选参数只能在必选参数的后面。
+**默认参数**   
+```typescript
+function foo2 (name: string = 'zhangsan'): string {
+  return name;
+}
+```
+## 任意类型 (`any`)
+在某些内置的 `API` 本身就支持任意类型参数，而 `TypeScript` 必须兼容该 `API`，所以就会有任意类型的出现.
+```typescript
+// 例如 JSON.stringify()
+function stringify(data: any) {
+  return JSON.stringify(data);
+}
+```
+> `any` 相当于是动态类型，本质上和普通的 `JavaScript` 使用 `let` 定义的没有区别，一般不建议使用。
+
+## 未知类型 (`unknown`)
+
+## 隐式类型推断
+在 `typescript` 中如果为定义类型，那么 `typescript` 会根据值来进行隐式推断类型
+```typescript
+let a = 123; // 此时会根据值 123 推断处 a 类型为 number
+a = 'str'; // 报错
+```
+如果变量定义了但是没有赋值，则会推断为 `any` 类型
+```typescript
+let b;
+b = 123; // 可以为number
+b = 'str'; //  也可以为 string
+```
