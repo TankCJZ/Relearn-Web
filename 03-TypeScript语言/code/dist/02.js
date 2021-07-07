@@ -54,4 +54,33 @@ var foo3 = function (name, age) {
 var foo4 = function (name, age) {
     return name + "-" + age;
 };
+// 任意类型
+function stringify(data) {
+    return JSON.stringify(data);
+}
+var a1 = 123;
+a1 = 'string';
+a1 = 123;
+a1 = false;
+// 类型推断
+var a = 123; // 此时会根据值 123 推断处 a 类型为 number
+// a = '123'; 
+var b;
+b = 123; // 可以为number
+b = 'str'; //  也可以为 string
+// unknow
+var a2;
+var a3 = a2;
+// let a4: number = a2; // 报错
+if (typeof a2 === 'number') {
+    a2.toFixed();
+}
+// 断言
+var res = [123, 13].find(function (item) { return item > 0; });
+var r1 = res;
+function formatUser(user) {
+    return user.age + "-" + user.age;
+}
+formatUser({ name: 'ts', age: 12 });
+// formatUser({name: 'ts', age : 12, size: 12});
 //# sourceMappingURL=02.js.map

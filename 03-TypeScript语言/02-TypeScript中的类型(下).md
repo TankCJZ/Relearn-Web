@@ -144,10 +144,32 @@ function foo2 (name: string = 'zhangsan'): string {
 function stringify(data: any) {
   return JSON.stringify(data);
 }
+
+// 申明为any 类型后 可以赋值任意类型值
+let a1: any = 123;
+a1 = 'string';
+a1 = 123;
+a1 = false;
 ```
 > `any` 相当于是动态类型，本质上和普通的 `JavaScript` 使用 `let` 定义的没有区别，一般不建议使用。
 
-## 未知类型 (`unknown`)
+## 不确定类型 (`unknown`)
+`unknown` 是 `TypeScript3.0` 新增加的一个类型，表示不确定的类型。与 `any` 不同的地方是 `unknown` 更安全：
+```typescript
+let a2: unknown
+// unknown 只能赋值给 any 类型的变量
+let a3: any = a2; //正常
+let a4: number = a2; // 报错
+
+// 在使用缩小类型判断 会进行类型检测
+if (typeof a2 === 'number') {
+    a2.toFixed(); //被检测为number类型，可以调用相关的方法
+}
+
+// 直接调用会报错
+a2.toFixed(); //报错
+```
+> 在能使用 `unknown` 的时候就不要使用 `any`.
 
 ## 隐式类型推断
 在 `typescript` 中如果为定义类型，那么 `typescript` 会根据值来进行隐式推断类型
@@ -161,3 +183,18 @@ let b;
 b = 123; // 可以为number
 b = 'str'; //  也可以为 string
 ```
+
+## 类型断言
+隐式推断一个变量可能会是一个不确定的值时候就可以使用 `as` 或者是 `<*>` 的方式可以给一个变量进行断言：
+```typescript
+// 在变量后面使用 as 加类型可将变量类型进行断言
+let res = [123, 13].find(item => item > 0);
+// 此时的 res 值可能是一个 number 或者是 undefined 没有找到则是返回 undefined
+
+// 所以这时候就可以使用类型断言
+let r1 = res as number; //将res断言为number类型
+
+// 使用 <number> 断言
+let r2 = <number>res;
+```
+> 注意： 类型断言只是在编译阶段存在，并不是直接改变变量类型，和类型转换是两码事

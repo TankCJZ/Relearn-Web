@@ -28,8 +28,8 @@
 
 ### TypeScript语言
   * 01-语言类型区别以及TypeScript和JavaScript
-  * 02-TypeScript中的类型
-  * 03-TypeScript类与接口
+  * 02-TypeScript中的类型(上)
+  * 03-TypeScript中的类型(下)
   * 04-TypeScript抽象类
   * 05-TypeScript泛型
   * 06-TypeScript类型声明
