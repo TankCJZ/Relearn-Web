@@ -109,3 +109,111 @@ formatUser({name: 'ts', age : 12});
 formatUser({name: 'ts'});
 
 // formatUser({name: 'ts', age : 12, size: 12});
+
+// interface User1 {
+//     name: string,
+//     readonly age: number,
+//     size?: number,
+//   }
+
+let u1: User1 = {
+    name: 'u1',
+    age: 123,
+}
+// u1.age = 123; //error
+u1.name = 'uu';
+console.log(u1)
+
+interface UserCache {
+    [key: string]: string, // key 表示动态属性名字，也可以是其他表示例如 props 不固定
+}
+
+// 给接口增加属性
+let uc: UserCache = {};
+uc.name = 'uc'; //ok
+// uc.age = 12; //ts(2322) 只能是string
+uc.size = '123'; //ok
+
+// 类
+// class Person {
+//     name: string; //如果成员没有赋初始值，那就必须在构造函数中赋值
+//     age: number;
+//     constructor(name: string, age: number) {
+//       this.name = name;
+//       this.age = age;
+//     }
+//     // 类的方法
+//     getName(): string {
+//       return this.name;
+//     }
+//   }
+
+
+  class Person {
+    name: string; //不适用修饰符，默认就是 public
+    private age: number; //私有
+    protected sex: string; //内部和子类
+    static address: string = 'sz'; //静态属性
+    constructor(name: string, age: number, sex: string) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
+  }
+  let person = new Person('张三', 19, '男');
+  console.log(person.name); //ok
+//   console.log(person.age); //ts(2341)
+//   console.log(person.sex); //ts(2445)
+  console.log(Person.address); //ok
+
+  class MinPerson extends Person {
+      constructor(name: string, age: number, sex: string) {
+        super(name, age, sex);
+        console.log(this.sex); //ok
+      }
+  }
+
+  class MaxPerson {
+    private static instance: MaxPerson;
+    private constructor() {
+    }
+    // 可以通过静态修饰符方式来实现，内部实例化再返回，可以做到单例模式
+    static create() {
+        if (this.instance) {
+            return this.instance;
+        } else {
+            this.instance = new MaxPerson();
+            return this.instance;
+        }
+    }
+  }
+
+  let maxPerson1 = MaxPerson.create();
+  let maxPerson2 = MaxPerson.create();
+
+  console.log(maxPerson1 === maxPerson2); // true
+//   let maxPerson = new MaxPerson('max');// 类“MaxPerson”的构造函数是私有的，仅可在类声明中访问
+
+// 接口
+interface UserT {
+    sayName(name: string): void; //定义一个无返回值的方法
+    getAge(age: number): number; //定义一个返回值为number的方法
+}
+
+interface UserT2 {
+    name: string
+    say(name: string): void; //定义一个无返回值的方法
+}
+// 接口 User 定义了两个方法，但是实现
+class UserOne implements UserT, UserT2 {
+    name: string = '123';
+    say(name: string) {
+        console.log(name);
+    }
+    sayName(name: string) {
+        console.log(name);
+    }
+    getAge(age: number) {
+        return age;
+    }
+}

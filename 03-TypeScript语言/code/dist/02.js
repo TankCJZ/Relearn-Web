@@ -1,4 +1,19 @@
 "use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 function hello(name) {
     console.log('hello, ', name);
 }
@@ -82,5 +97,73 @@ function formatUser(user) {
     return user.age + "-" + user.age;
 }
 formatUser({ name: 'ts', age: 12 });
-// formatUser({name: 'ts', age : 12, size: 12});
+formatUser({ name: 'ts' });
+var u1 = {
+    name: 'u1',
+    age: 123,
+};
+// u1.age = 123; //error
+u1.name = 'uu';
+console.log(u1);
+// 给接口增加属性
+var uc = {};
+uc.name = 'uc'; //ok
+// uc.age = 12; //ts(2322) 只能是string
+uc.size = '123'; //ok
+// 类
+// class Person {
+//     name: string; //如果成员没有赋初始值，那就必须在构造函数中赋值
+//     age: number;
+//     constructor(name: string, age: number) {
+//       this.name = name;
+//       this.age = age;
+//     }
+//     // 类的方法
+//     getName(): string {
+//       return this.name;
+//     }
+//   }
+var Person = /** @class */ (function () {
+    function Person(name, age, sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
+    Person.address = 'sz'; //静态属性
+    return Person;
+}());
+var person = new Person('张三', 19, '男');
+console.log(person.name); //ok
+//   console.log(person.age); //ts(2341)
+//   console.log(person.sex); //ts(2445)
+console.log(Person.address); //ok
+var MinPerson = /** @class */ (function (_super) {
+    __extends(MinPerson, _super);
+    function MinPerson(name, age, sex) {
+        var _this = _super.call(this, name, age, sex) || this;
+        console.log(_this.sex); //ok
+        return _this;
+    }
+    return MinPerson;
+}(Person));
+var MaxPerson = /** @class */ (function () {
+    function MaxPerson(name) {
+        this.name = name;
+    }
+    // 可以通过静态修饰符方式来实现，内部实例化再返回，可以做到单例模式
+    MaxPerson.create = function (name) {
+        if (this.instance) {
+            return this.instance;
+        }
+        else {
+            this.instance = new MaxPerson(name);
+            return this.instance;
+        }
+    };
+    return MaxPerson;
+}());
+var maxPerson1 = MaxPerson.create('max');
+var maxPerson2 = MaxPerson.create('max');
+console.log(maxPerson1 === maxPerson2);
+//   let maxPerson = new MaxPerson('max');// 类“MaxPerson”的构造函数是私有的，仅可在类声明中访问
 //# sourceMappingURL=02.js.map
