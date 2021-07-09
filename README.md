@@ -30,9 +30,8 @@
   * 01-语言类型区别以及TypeScript和JavaScript
   * 02-TypeScript中的类型(上)
   * 03-TypeScript中的类型(下)
-  * 04-TypeScript抽象类
-  * 05-TypeScript泛型
-  * 06-TypeScript类型声明
+  * 04-TypeScript泛型
+  * 05-TypeScript类型声明
 
 ### JavaScript函数式编程
 

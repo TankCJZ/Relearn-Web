@@ -98,13 +98,6 @@ function formatUser(user) {
 }
 formatUser({ name: 'ts', age: 12 });
 formatUser({ name: 'ts' });
-var u1 = {
-    name: 'u1',
-    age: 123,
-};
-// u1.age = 123; //error
-u1.name = 'uu';
-console.log(u1);
 // 给接口增加属性
 var uc = {};
 uc.name = 'uc'; //ok
@@ -147,23 +140,76 @@ var MinPerson = /** @class */ (function (_super) {
     return MinPerson;
 }(Person));
 var MaxPerson = /** @class */ (function () {
-    function MaxPerson(name) {
-        this.name = name;
+    function MaxPerson() {
     }
     // 可以通过静态修饰符方式来实现，内部实例化再返回，可以做到单例模式
-    MaxPerson.create = function (name) {
+    MaxPerson.create = function () {
         if (this.instance) {
             return this.instance;
         }
         else {
-            this.instance = new MaxPerson(name);
+            this.instance = new MaxPerson();
             return this.instance;
         }
     };
     return MaxPerson;
 }());
-var maxPerson1 = MaxPerson.create('max');
-var maxPerson2 = MaxPerson.create('max');
-console.log(maxPerson1 === maxPerson2);
-//   let maxPerson = new MaxPerson('max');// 类“MaxPerson”的构造函数是私有的，仅可在类声明中访问
+var maxPerson1 = MaxPerson.create();
+var maxPerson2 = MaxPerson.create();
+console.log(maxPerson1 === maxPerson2); // true
+// 接口 User 定义了两个方法，但是实现
+var UserOne = /** @class */ (function () {
+    function UserOne() {
+        this.name = '123';
+    }
+    UserOne.prototype.say = function (name) {
+        console.log(name);
+    };
+    UserOne.prototype.sayName = function (name) {
+        console.log(name);
+    };
+    UserOne.prototype.getAge = function (age) {
+        return age;
+    };
+    return UserOne;
+}());
+// 抽象类
+var Animal = /** @class */ (function () {
+    function Animal() {
+    }
+    Animal.prototype.run = function () {
+        console.log('run');
+    };
+    return Animal;
+}());
+// 实现抽象类
+var Cat = /** @class */ (function (_super) {
+    __extends(Cat, _super);
+    function Cat() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Cat.prototype.getAnimalName = function (name) {
+        return "cat name is " + name;
+    };
+    return Cat;
+}(Animal));
+var cat = new Cat();
+cat.run();
+// 泛型
+function createArray(length, value) {
+    var arr = Array(length).fill(value);
+    return arr;
+}
+console.log(createArray(3, 10)); //[ 10, 10, 10 ]
+function createArray2(length, value) {
+    var arr = Array(length).fill(value);
+    return arr;
+}
+console.log(createArray2(3, 'arr')); //[ 10, 10, 10 ]
+function createArray3(length, value) {
+    var arr = Array(length).fill(value);
+    return arr;
+}
+console.log(createArray3(3, 10));
+console.log(createArray3(3, 'arr'));
 //# sourceMappingURL=02.js.map

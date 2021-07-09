@@ -194,3 +194,38 @@ class UserOne1 implements User, User2 {
     }
 }
 ```
+
+## 抽象类
+抽象类也是 `TypeScript` 增加的特性，在 `class` 之前加上关键字 `abstract` 来定义抽象类:
+```typescript
+// 定义一个抽象类 Animal
+abstract class Animal {
+    // 抽象类可以由自己的方法
+    run(): void {
+        console.log('run')
+    }
+}
+```
+抽象类也可以定义抽象方法, 同样也是在方法的前面加上关键字 `abstract`:   
+```typescript
+abstract class Animal {
+    run(): void {
+        console.log('run')
+    }
+    // 抽象方法
+    abstract getAnimalName(name: string): string;
+}
+```
+> 抽象方法不需要再抽象类中实现，只需要定义名称，参数，和返回值类型即可
+那么抽象类中的抽象方法是应该由子类来实现的，父亲给儿子下命令，儿子不得不去做。
+```typescript
+// 实现抽象类 创建一个 Cat 类并且继承 抽象类 `Animal` 并且实现了 `getAnimalName` 方法
+class Cat extends Animal {
+    getAnimalName(name: string) {
+        return `cat name is ${name}`;
+    }
+}
+// Cat 类同时也会继承到父类 的属性 以及非抽象方法
+let cat = new Cat();
+cat.run(); //run
+```

@@ -116,13 +116,13 @@ formatUser({name: 'ts'});
 //     size?: number,
 //   }
 
-let u1: User1 = {
-    name: 'u1',
-    age: 123,
-}
+// let u1: User1 = {
+//     name: 'u1',
+//     age: 123,
+// }
 // u1.age = 123; //error
-u1.name = 'uu';
-console.log(u1)
+// u1.name = 'uu';
+// console.log(u1)
 
 interface UserCache {
     [key: string]: string, // key 表示动态属性名字，也可以是其他表示例如 props 不固定
@@ -217,3 +217,43 @@ class UserOne implements UserT, UserT2 {
         return age;
     }
 }
+
+// 抽象类
+abstract class Animal {
+    run(): void {
+        console.log('run')
+    }
+    // 抽象方法
+    abstract getAnimalName(name: string): string;
+}
+
+// 实现抽象类
+class Cat extends Animal {
+    getAnimalName(name: string) {
+        return `cat name is ${name}`;
+    }
+}
+let cat = new Cat();
+cat.run();
+
+// 泛型
+function createArray(length: number, value: number): Array<number> {
+    const arr = Array<number>(length).fill(value);
+    return arr;
+  }
+
+console.log(createArray(3, 10)); //[ 10, 10, 10 ]
+
+function createArray2(length: number, value: string): Array<string> {
+    const arr = Array<string>(length).fill(value);
+    return arr;
+  }
+  console.log(createArray2(3, 'arr')); //[ 10, 10, 10 ]
+
+function createArray3<T>(length: number, value: T): Array<T> {
+    const arr = Array<T>(length).fill(value);
+    return arr;
+}
+
+console.log(createArray3<number>(3, 10));
+console.log(createArray3<string>(3, 'arr'));
