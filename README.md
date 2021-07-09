@@ -34,7 +34,13 @@
   * [05-TypeScript类型声明](https://github.com/TankCJZ/Relearn-Web/blob/main/03-TypeScript%E8%AF%AD%E8%A8%80/05-TypeScript%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.md)
 
 ### JavaScript函数式编程
-
+  * 什么是函数式编程
+  * 高阶函数的使用
+  * 闭包的使用
+  * 纯函数的使用
+  * 什么是副作用
+  * 函数柯里化的使用
+  * 函数组合的使用
 ### JavaScript性能优化
 
 ## 前端工程化
