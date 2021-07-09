@@ -27,11 +27,11 @@
   * [05-Async-Await 异步方案](https://github.com/TankCJZ/Relearn-Web/blob/main/02-JavaScript%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/05-Async-Await%20%E5%BC%82%E6%AD%A5%E6%96%B9%E6%A1%88.md)
 
 ### TypeScript语言
-  * 01-语言类型区别以及TypeScript和JavaScript
-  * 02-TypeScript中的类型(上)
-  * 03-TypeScript中的类型(下)
-  * 04-TypeScript泛型
-  * 05-TypeScript类型声明
+  * [01-语言类型区别以及TypeScript和JavaScript](https://github.com/TankCJZ/Relearn-Web/blob/main/03-TypeScript%E8%AF%AD%E8%A8%80/01-%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B%E5%8C%BA%E5%88%AB%E4%BB%A5%E5%8F%8ATypeScript%E5%92%8CJavaScript.md)
+  * [02-TypeScript中的类型(上)](https://github.com/TankCJZ/Relearn-Web/blob/main/03-TypeScript%E8%AF%AD%E8%A8%80/02-TypeScript%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%9E%8B(%E4%B8%8A).md)
+  * [03-TypeScript中的类型(下)](https://github.com/TankCJZ/Relearn-Web/blob/main/03-TypeScript%E8%AF%AD%E8%A8%80/03-TypeScript%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%9E%8B(%E4%B8%8B).md)
+  * [04-TypeScript泛型](https://github.com/TankCJZ/Relearn-Web/blob/main/03-TypeScript%E8%AF%AD%E8%A8%80/04-TypeScript%E6%B3%9B%E5%9E%8B.md)
+  * [05-TypeScript类型声明](https://github.com/TankCJZ/Relearn-Web/blob/main/03-TypeScript%E8%AF%AD%E8%A8%80/05-TypeScript%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.md)
 
 ### JavaScript函数式编程
 
