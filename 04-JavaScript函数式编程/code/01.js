@@ -90,3 +90,36 @@ ForEach(arr2, item => {
     console.log(item);
 })
 
+
+// map
+function map(array, fn) {
+    let newArray = [];
+    for (let item of array) {
+        newArray.push(fn(item));
+    }
+    return newArray;
+}
+// let arr4 = [1,2,3,4,5];
+// console.log(map(arr4, item => {
+//     return item * item;
+// })); //[ 1, 4, 9, 16, 25 ]
+// console.log(arr4);
+
+function some(array, fn) {
+    let res = false;
+    for (let item of array) {
+        res = fn(item);
+        if (res) {
+            break;
+        }
+    }
+    return res;
+}
+
+let arr4 = [10,2,3,1,3];
+console.log(some(arr4, item => {
+    return item > 0;
+})); //true
+console.log(some(arr4, item => {
+    return item > 11;
+})); //false
