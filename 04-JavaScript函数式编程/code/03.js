@@ -19,3 +19,24 @@ function makeFunc() {
 
 var myFunc = makeFunc();
 myFunc();
+
+// 闭包的应用
+// 1.计数器的应用
+function createCounter(init) {
+    let total = init;
+    return function (count) {
+        total += count;
+        return total;
+    }
+}
+
+let counter1 = createCounter(0);
+let counter2 = createCounter(10);
+
+console.log(counter1(1));
+console.log(counter1(1));
+console.log(counter1(1));
+
+console.log(counter2(10));
+console.log(counter2(10));
+console.log(counter2(10));
