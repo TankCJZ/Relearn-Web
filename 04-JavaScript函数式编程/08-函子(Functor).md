@@ -74,3 +74,36 @@ console.log(res); //Functor { _value: 200 }
 * 函子就是一个实现了 `map` 锲约的对象
 * 可以把函子想象成一个盒子，里面封装了一个值，只能使用 `map` 去修改值，而且盒子是无法打开的
 * 每次修改都是返回新的值盒子
+
+## `MayBe` 函子
+`MayBe` 函子是用来处理编程过程中的一些错误，例如空值，类型异常等。它通常是把外部异常控制在内部中，该函子会内部来处理这种异常。
+```javascript
+// MayBe
+class MayBe {
+    static of(value) {
+        return new MayBe(value);
+    }
+    constructor(value) {
+        this._value = value;
+    }
+    map(fn) {
+        return this.isEmpty() ? MayBe.of(null) : MayBe.of(fn(this._value));
+    }
+    // 处理_value 为空的情况
+    isEmpty() {
+        return this._value === null || this._value === undefined || this._value === '';
+    }
+}
+// 使用
+let r = MayBe.of('javascript')
+    .map(v => v.toUpperCase());
+
+console.log(r); //MayBe { _value: 'JAVASCRIPT' }
+
+// 非正常传值情况
+let r1 = MayBe.of(null)
+    .map(v => v.toUpperCase());
+
+console.log(r1); //MayBe { _value: null }
+```
+> `MayBe` 函子作用就是保证代码异常在可控范围，提升代码稳定性

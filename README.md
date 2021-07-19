@@ -34,14 +34,14 @@
   * [05-TypeScript类型声明](https://github.com/TankCJZ/Relearn-Web/blob/main/03-TypeScript%E8%AF%AD%E8%A8%80/05-TypeScript%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.md)
 
 ### JavaScript函数式编程
-  * 什么是函数式编程
-  * 高阶函数的使用
-  * 闭包的使用
-  * 纯函数的使用
-  * 什么是副作用
-  * 函数柯里化的使用
-  * 函数组合的使用
-  * 函子(Functor)
+  * [01-什么是函数式编程](https://github.com/TankCJZ/Relearn-Web/blob/main/04-JavaScript%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/01-%E4%BB%80%E4%B9%88%E6%98%AF%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.md)
+  * [02-高阶函数的使用](https://github.com/TankCJZ/Relearn-Web/blob/main/04-JavaScript%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/02-%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8.md)
+  * [03-闭包的使用](https://github.com/TankCJZ/Relearn-Web/blob/main/04-JavaScript%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/03-%E9%97%AD%E5%8C%85%E7%9A%84%E4%BD%BF%E7%94%A8.md)
+  * [04-纯函数的使用](https://github.com/TankCJZ/Relearn-Web/blob/main/04-JavaScript%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/04-%E7%BA%AF%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8.md)
+  * [05-什么是副作用](https://github.com/TankCJZ/Relearn-Web/blob/main/04-JavaScript%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/05-%E4%BB%80%E4%B9%88%E6%98%AF%E5%89%AF%E4%BD%9C%E7%94%A8.md)
+  * [06-函数柯里化的使用](https://github.com/TankCJZ/Relearn-Web/blob/main/04-JavaScript%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/06-%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96%E7%9A%84%E4%BD%BF%E7%94%A8.md)
+  * [07-函数组合的使用](https://github.com/TankCJZ/Relearn-Web/blob/main/04-JavaScript%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/07-%E5%87%BD%E6%95%B0%E7%BB%84%E5%90%88%E7%9A%84%E4%BD%BF%E7%94%A8.md)
+  * [08-函子(Functor)](https://github.com/TankCJZ/Relearn-Web/blob/main/04-JavaScript%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/08-%E5%87%BD%E5%AD%90(Functor).md)
 ### JavaScript性能优化
 
 ## 前端工程化
