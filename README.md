@@ -42,7 +42,13 @@
   * [06-函数柯里化的使用](https://github.com/TankCJZ/Relearn-Web/blob/main/04-JavaScript%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/06-%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96%E7%9A%84%E4%BD%BF%E7%94%A8.md)
   * [07-函数组合的使用](https://github.com/TankCJZ/Relearn-Web/blob/main/04-JavaScript%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/07-%E5%87%BD%E6%95%B0%E7%BB%84%E5%90%88%E7%9A%84%E4%BD%BF%E7%94%A8.md)
   * [08-函子(Functor)](https://github.com/TankCJZ/Relearn-Web/blob/main/04-JavaScript%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/08-%E5%87%BD%E5%AD%90(Functor).md)
+
 ### JavaScript性能优化
+  * 01-内存管理
+  * 02-垃圾回收常见GC算法
+  * 03-V8引擎的垃圾回收
+  * 04-Perfomance工具使用
+  * 05-性能优化实例
 
 ## 前端工程化
 
