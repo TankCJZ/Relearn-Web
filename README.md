@@ -44,9 +44,8 @@
   * [08-函子(Functor)](https://github.com/TankCJZ/Relearn-Web/blob/main/04-JavaScript%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/08-%E5%87%BD%E5%AD%90(Functor).md)
 
 ### JavaScript性能优化
-  * 01-内存管理
-  * 02-垃圾回收常见GC算法
-  * 03-V8引擎的垃圾回收
+  * 01-内存管理与垃圾回收
+  * 02-常见GC算法
   * 04-Perfomance工具使用
   * 05-性能优化实例
 
