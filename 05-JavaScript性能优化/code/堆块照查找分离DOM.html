@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>堆块照查找分离DOM</title>
+</head>
+<body>
+    <button id="add">创建DOM</button>
+    <script>
+
+        let divDom = null;
+        function add() {
+            divDom = document.createElement('div');
+            for (let i = 0; i < 1000; i++) {
+                divDom.appendChild(document.createElement('span'))
+            }
+        }
+        document.getElementById('add').addEventListener('click', add);
+    </script>
+</body>
+</html>
