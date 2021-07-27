@@ -44,11 +44,11 @@
   * [08-函子(Functor)](https://github.com/TankCJZ/Relearn-Web/blob/main/04-JavaScript%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/08-%E5%87%BD%E5%AD%90(Functor).md)
 
 ### JavaScript性能优化
-  * 01-内存管理与垃圾回收
-  * 02-常见GC算法
-  * 03-V8垃圾回收机制
-  * 04-Perfomance工具的使用
-  * 05-性能优化实例
+  * [01-内存管理与垃圾回收](https://github.com/TankCJZ/Relearn-Web/blob/main/05-JavaScript%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/01-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E4%B8%8E%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6.md)
+  * [02-常见GC算法](https://github.com/TankCJZ/Relearn-Web/blob/main/05-JavaScript%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/02-%E5%B8%B8%E8%A7%81GC%E7%AE%97%E6%B3%95.md)
+  * [03-V8垃圾回收机制](https://github.com/TankCJZ/Relearn-Web/blob/main/05-JavaScript%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/03-V8%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6.md)
+  * [04-Perfomance工具的使用](https://github.com/TankCJZ/Relearn-Web/blob/main/05-JavaScript%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/02-%E5%B8%B8%E8%A7%81GC%E7%AE%97%E6%B3%95.md)
+  * [05-性能优化实例](https://github.com/TankCJZ/Relearn-Web/blob/main/05-JavaScript%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/05-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E4%BE%8B.md)
 
 ## 前端工程化
 
