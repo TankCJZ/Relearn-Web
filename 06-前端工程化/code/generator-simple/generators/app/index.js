@@ -26,7 +26,6 @@ module.exports = class extends Generator {
         // 调用父类的fs对象中方法
         // this.fs.write(this.destinationPath('test.json'), 'writing');
 
-
         // 使用模板文件
         const tmpl = this.templatePath('test.txt');
         // 输出目标文件

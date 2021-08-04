@@ -17,6 +17,13 @@ module.exports = class extends Generator {
     }
     // 父类的方法
     writing() {
-        
+        // 设置项目根目录
+        this.destinationRoot(this.answers.name);
+        // 复制 vue 模板到项目
+        this.copyTemplateAsync('vue', this.destinationPath());
+    }
+    install() {
+        // 执行安装依赖 yarn install
+        this.spawnCommand('yarn', ['install']);
     }
 }
