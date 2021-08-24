@@ -108,3 +108,15 @@ exports.cssMini = done => {
 
     return end;
 }
+
+// 文件操作API
+const { src, dest } = require('gulp');
+const cleanCss = require('gulp-clean-css');
+const rename = require('gulp-rename');
+
+exports.default = () => {
+    return src('./normalize.css')
+        .pipe(cleanCss())
+        .pipe(rename({ extname: '.min.css' }))
+        .pipe(dest('dist'));
+}
