@@ -1,0 +1,10 @@
+body {
+  font-size: 12px;
+}
+body div {
+  width: 100px;
+  height: 100px;
+}
+body div span {
+  color: #fff;
+}
